@@ -1,0 +1,68 @@
+version: '3.8'
+# --------- #
+# Services  #
+# --------- #
+services:
+  #########
+  # Nginx #
+  #########
+  nginx:
+    build: docker/nginx
+    command: nginx -g "daemon off;"
+    depends_on:
+      - php
+    networks:
+      internal:
+        aliases:
+          - nginx.internal
+    ports:
+      - ${NGINX_PORT_EXPOSED}:80
+  #######
+  # Php #
+  #######
+  php:
+    build: docker/php
+    command: php-fpm
+    depends_on:
+      - mariadb
+    networks:
+      internal:
+        aliases:
+          - php.internal
+    volumes:
+      - $PWD:/var/www
+    working_dir: /var/www
+    environment:
+      SYMFONY_APP_PATH: .
+      TIMEZONE: Europe/Rome
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+      PHP_IDE_CONFIG: serverName=localhost
+  ###########
+  # MariaDB #
+  ###########
+  mariadb:
+    image: mariadb:${MARIADB_VERSION}
+    command:
+      - --collation-server=utf8_unicode_ci
+      - --character-set-server=utf8
+    networks:
+      internal:
+        aliases:
+          - mariadb.internal
+    ports:
+      - ${MARIADB_PORT_EXPOSED}:3306
+    volumes:
+      - mariadb-data:/var/lib/mysql
+      - ${MARIADB_PATH_SCRIPTS_FOLDER}:/docker-entrypoint-initdb.d/
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+# --------- #
+# Networks  #
+# --------- #
+networks:
+  internal:
+# ------- #
+# Volumes #
+# ------- #
+volumes:
+  mariadb-data:
