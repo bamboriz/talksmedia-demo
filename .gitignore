@@ -22,3 +22,8 @@ APP_SECRET=b683af00b143ddc9b92f8da17d99c317
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+###> friendsofphp/php-cs-fixer ###
+/.php_cs
+/.php_cs.cache
+###< friendsofphp/php-cs-fixer ###

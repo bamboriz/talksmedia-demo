@@ -16,3 +16,5 @@ terminal:
 	docker-compose exec php sh
 test:
 	docker-compose exec php composer run-script test:phpunit:no-cache
+format:
+	docker-compose exec php vendor/bin/php-cs-fixer fix
