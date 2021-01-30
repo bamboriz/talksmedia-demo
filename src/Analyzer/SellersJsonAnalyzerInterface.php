@@ -10,7 +10,7 @@ namespace App\Analyzer;
 interface SellersJsonAnalyzerInterface
 {
     /**
-     * Analyze and store data on sellers.json
+     * Analyze and store data on sellers.json.
      */
     public function analyze(array $associativeSellersJson): void;
 }
