@@ -22,7 +22,7 @@ class Seller
     private int $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private string $name;
 
@@ -42,13 +42,25 @@ class Seller
     private ?string $comment;
 
     /**
+     * @ORM\Column(type="integer", length=255, nullable=true)
+     */
+    private ?int $isConfidential;
+
+    /**
+     * @ORM\Column(type="integer", length=255, nullable=true)
+     */
+    private ?int $isPassthrough;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private ?string $domain;
+
+    /**
      * Constructor.
      */
-    public function __construct(string $name, int $sellerId, ?string $comment = null)
+    public function __construct()
     {
-        $this->name     = $name;
-        $this->sellerId = $sellerId;
-        $this->comment  = $comment;
     }
 
     public function getId(): int
@@ -61,13 +73,82 @@ class Seller
         return $this->name;
     }
 
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
     public function getSellerId(): int
     {
         return $this->sellerId;
     }
 
+    public function setSellerId(int $sellerId): self
+    {
+        $this->sellerId = $sellerId;
+
+        return $this;
+    }
+
     public function getComment(): ?string
     {
         return $this->comment;
+    }
+
+    public function setComment(string $comment): self
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
+
+    public function getIsConfidential(): ?int
+    {
+        return $this->isConfidential;
+    }
+
+    public function setIsConfidential(int $isConfidential): self
+    {
+        $this->isConfidential = $isConfidential;
+
+        return $this;
+    }
+
+    public function getIsPassthrough(): ?int
+    {
+        return $this->isPassthrough;
+    }
+
+    public function setIsPassthrough(int $isPassthrough): self
+    {
+        $this->isPassthrough = $isPassthrough;
+
+        return $this;
+    }
+
+    public function getDomain(): ?string
+    {
+        return $this->domain;
+    }
+
+    public function setDomain(string $domain): self
+    {
+        $this->domain = $domain;
+
+        return $this;
     }
 }
