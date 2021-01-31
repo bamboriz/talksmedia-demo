@@ -8,6 +8,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
+/**
+ * SellersJsonValidatorController.
+ */
 class SellersJsonValidatorController extends AbstractController
 {
     public function __construct(HttpClientInterface $client, SellersJsonSimpleAnalyzer $analyser)
@@ -30,15 +33,12 @@ class SellersJsonValidatorController extends AbstractController
         {
             $this->analyser->analyze(\json_decode($response->getContent(), true));
 
-        if ($this->analyser->getSellers()) {
-            $response = new JsonResponse(['code' => 200, 'sellers' => $this->analyser->getSellers()]);
-            $response->setStatusCode(200);
+            if ($this->analyser->getSellers()) {
+                $response = new JsonResponse(['code' => 200, 'sellers' => $this->analyser->getSellers()]);
+                $response->setStatusCode(200);
 
-            return $response;
-        }
-        
-        $response = $this->respond(422, 'seller.json invalid');
-        return $response;
+                return $response;
+            }
         }
 
         $response = $this->respond(404, 'seller.json not found');
