@@ -2,6 +2,12 @@
     "composer/package-versions-deprecated": {
         "version": "1.11.99.1"
     },
+    "composer/semver": {
+        "version": "3.2.4"
+    },
+    "composer/xdebug-handler": {
+        "version": "1.4.5"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -22,6 +28,9 @@
     },
     "doctrine/common": {
         "version": "3.1.0"
+    },
+    "doctrine/data-fixtures": {
+        "version": "1.5.0"
     },
     "doctrine/dbal": {
         "version": "2.12.1"
@@ -78,6 +87,38 @@
     "doctrine/sql-formatter": {
         "version": "1.1.1"
     },
+    "fakerphp/faker": {
+        "version": "v1.13.0"
+    },
+    "friendsofphp/php-cs-fixer": {
+        "version": "2.16",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.16",
+            "ref": "c1947bad147704aeaf0285745f0baae927a58959"
+        },
+        "files": [
+            ".php_cs.dist"
+        ]
+    },
+    "hautelook/alice-bundle": {
+        "version": "2.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.1",
+            "ref": "71822522faf7ed2792d86b7f94ce73443358ccb9"
+        },
+        "files": [
+            "config/packages/dev/hautelook_alice.yaml",
+            "config/packages/test/hautelook_alice.yaml",
+            "fixtures/.gitignore"
+        ]
+    },
+    "justinrainbow/json-schema": {
+        "version": "5.2.10"
+    },
     "laminas/laminas-code": {
         "version": "3.5.1"
     },
@@ -87,11 +128,30 @@
     "laminas/laminas-zendframework-bridge": {
         "version": "1.1.1"
     },
+    "myclabs/deep-copy": {
+        "version": "1.10.2"
+    },
+    "nelmio/alice": {
+        "version": "3.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.2",
+            "ref": "0b9900ece737bec7752e4155c0164639dd9b0cb0"
+        },
+        "files": [
+            "config/packages/dev/nelmio_alice.yaml",
+            "config/packages/test/nelmio_alice.yaml"
+        ]
+    },
     "nikic/php-parser": {
         "version": "v4.10.4"
     },
     "ocramius/proxy-manager": {
         "version": "2.10.0"
+    },
+    "php-cs-fixer/diff": {
+        "version": "v1.3.1"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -104,6 +164,30 @@
     },
     "psr/log": {
         "version": "1.1.3"
+    },
+    "sebastian/comparator": {
+        "version": "4.0.6"
+    },
+    "sebastian/diff": {
+        "version": "4.0.4"
+    },
+    "sebastian/exporter": {
+        "version": "4.0.3"
+    },
+    "sebastian/recursion-context": {
+        "version": "4.0.4"
+    },
+    "sensio/framework-extra-bundle": {
+        "version": "5.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.2",
+            "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
+        },
+        "files": [
+            "config/packages/sensio_framework_extra.yaml"
+        ]
     },
     "symfony/cache": {
         "version": "v5.2.1"
@@ -185,6 +269,9 @@
             "src/Kernel.php"
         ]
     },
+    "symfony/http-client": {
+        "version": "v5.2.2"
+    },
     "symfony/http-client-contracts": {
         "version": "v2.3.1"
     },
@@ -202,6 +289,9 @@
             "version": "1.0",
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
+    },
+    "symfony/options-resolver": {
+        "version": "v5.2.2"
     },
     "symfony/orm-pack": {
         "version": "v2.1.0"
@@ -230,11 +320,23 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.20.0"
     },
+    "symfony/polyfill-php70": {
+        "version": "v1.20.0"
+    },
     "symfony/polyfill-php73": {
         "version": "v1.20.0"
     },
     "symfony/polyfill-php80": {
         "version": "v1.20.0"
+    },
+    "symfony/process": {
+        "version": "v5.2.2"
+    },
+    "symfony/property-access": {
+        "version": "v5.2.2"
+    },
+    "symfony/property-info": {
+        "version": "v5.2.2"
     },
     "symfony/proxy-manager-bridge": {
         "version": "v5.2.1"
@@ -270,6 +372,15 @@
     },
     "symfony/yaml": {
         "version": "v5.2.1"
+    },
+    "theofidry/alice-data-fixtures": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fe5a50faf580eb58f08ada2abe8afbd2d4941e05"
+        }
     },
     "webimpress/safe-writer": {
         "version": "2.1.0"
