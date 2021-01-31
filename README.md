@@ -1,6 +1,3 @@
-# junior-php-test
-This repository holds the code for the junior PHP developer test.
-
 ## Development Flow
 
 All development work occurs on the `develop` branch.
@@ -77,7 +74,7 @@ for it in the `composer.json` file.
 To run all tests, execute this command:
 ```sh
 make test
-
+```
 ## Code Formatting
 
 To format code, To run all tests, execute this command:
