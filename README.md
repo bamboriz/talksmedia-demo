@@ -77,3 +77,9 @@ for it in the `composer.json` file.
 To run all tests, execute this command:
 ```sh
 make test
+
+## Code Formatting
+
+To format code, To run all tests, execute this command:
+```sh
+make format
